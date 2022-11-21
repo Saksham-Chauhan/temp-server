@@ -4,7 +4,7 @@ const app = express();
 
 app.get("/", (req, res) => {
   console.log(req);
-  res.status(200).send("running");
+  res.status(200).send("running perfectly");
 });
 
 app.listen(4040, () => {
