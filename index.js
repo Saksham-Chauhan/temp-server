@@ -12,8 +12,8 @@ app.get("/", (req, res) => {
 app.post("/submit", (req, res) => {
   console.log(req.body);
   logger.push({
-    body: req.body,
-    payload: req?.payload,
+    body: JSON.stringify(req.body),
+    payload: JSON.stringify(req?.payload),
     params: req?.params,
     path: req.path,
   });
