@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-const logger = [];
+let logger = [];
 
 app.get("/", (req, res) => {
   console.log(req);
