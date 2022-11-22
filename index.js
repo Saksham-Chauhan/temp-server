@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 
 app.post("/submit", (req, res) => {
   console.log(req.body);
-  logger.push(req.body);
+  logger.push(req);
   res.status(201).send(true);
 });
 
