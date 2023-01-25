@@ -30,6 +30,13 @@ app.get("/insta", async (req, res) => {
   res.status(200).json(resp.data);
 });
 
+app.get("/proxy", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  const resp = await axios.get(req.headers?.url);
+  res.status(200).json(resp.data);
+});
+
 app.post("/submit", (req, res) => {
   console.log(req.body);
   logger.push({
