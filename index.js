@@ -21,6 +21,15 @@ app.get("/distance", async (req, res) => {
   res.status(200).json(distance);
 });
 
+app.get("/insta", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  const resp = await axios.get("http://161.97.112.22:8081/");
+  console.log(resp.data);
+  // const distance = await getDistance(req.headers?.url);
+  res.status(200).json(resp.data);
+});
+
 app.post("/submit", (req, res) => {
   console.log(req.body);
   logger.push({
